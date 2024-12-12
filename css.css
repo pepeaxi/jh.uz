@@ -94,14 +94,16 @@ header {
     font-weight: 900;
     font-size: 1.1rem;
     font-family: 'Montserrat', sans-serif;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .contact a:hover {
-    background: linear-gradient(135deg, #FFD700, #FFA500, #DAA520, #B8860B);
-    color: #002706;
+    background: #FFA500;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
 }
 
 /* Responsive adjustments */
