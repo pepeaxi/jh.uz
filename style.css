@@ -5,16 +5,10 @@
 }
 
 :root {
-    --gold-gradient: linear-gradient(135deg, #FFD700, #FFA500, #DAA520, #B8860B); /* Rich gold gradient */
+    --gold-gradient: linear-gradient(90deg, #bc881b, #fdeb95, #cea137, #fded98, #b78113); /* New 90-degree gold gradient */
     --text-color: #ffffff;
     --background-color: #002706;
-    --gold-gradient-5: linear-gradient(135deg, 
-        #FFD700,  /* Pure gold */
-        #FDB931,  /* Rich yellow gold */
-        #DAA520,  /* Goldenrod */
-        #B8860B,  /* Dark golden */
-        #CD9B1D   /* Golden brown */
-    );
+    --gold-gradient-5: linear-gradient(90deg, #bc881b, #fdeb95, #cea137, #fded98, #b78113); /* New 90-degree gold gradient */
 }
 
 body {
@@ -34,11 +28,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, 
-        rgba(0, 0, 0, 0.95) 0%,
-        rgba(0, 0, 0, 0.9) 50%,
-        rgba(0, 0, 0, 0.85) 100%
-    );
+    background-color:#002706c5 ; 
     z-index: 1;
     pointer-events: none;
 }
@@ -78,28 +68,28 @@ header {
 
 .logo-container {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 15px;
-    background: #000;
     border-radius: 50%;
 }
 
 .circle-icon {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     animation: rotate 20s linear infinite;
     filter: brightness(1.2);
+    transform: translate(-35px, -35px);
 }
 
 .h-logo {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 85px;
+    height: 85px;
     z-index: 2;
     filter: brightness(1.2) contrast(1.2);
 }
@@ -119,12 +109,13 @@ header {
         width: 120px;
         height: 120px;
         margin: 10px;
-        background: #000;
+
     }
 
     .circle-icon {
-        width: 120px;
-        height: 120px;
+        width: 250px;
+        height: 250px;
+        transform: translate(-35px, -35px);
     }
 
     .h-logo {
@@ -141,8 +132,9 @@ header {
     }
 
     .circle-icon {
-        width: 100px;
-        height: 100px;
+        width: 250px;
+        height: 250px;
+        transform: translate(-35px, -35px);
     }
 
     .h-logo {
@@ -184,26 +176,39 @@ header {
     
 }
 
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(189, 136, 27, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 25px rgba(189, 136, 27, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(189, 136, 27, 0);
+    }
+}
+
 .contact a {
     color: #000;
-    padding: 12px 24px;
+    padding: 15px 35px;
     border-radius: 50px;
     text-decoration: none;
-    background: var(--gold-gradient-5);
+    background: linear-gradient(90deg, #bc881b, #fdeb95, #cea137, #fded98, #b78113);
     font-weight: 900;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-family: 'Montserrat', sans-serif;
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    animation: pulse 2s infinite;
 }
 
 .contact a:hover {
-    background: var(--gold-gradient-5);
+    background: linear-gradient(90deg, #bc881b, #fdeb95, #cea137, #fded98, #b78113);
     background-position: right center;
     color: #000;
-    box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
-    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(189, 136, 27, 0.4);
+    animation: none;
 }
 
 /* Responsive adjustments */
@@ -237,8 +242,9 @@ header {
     }
 
     .circle-icon {
-        width: 120px;
-        height: 120px;
+        width: 250px;
+        height: 250px;
+        transform: translate(-35px, -35px);
     }
 
     .h-logo {
@@ -255,8 +261,9 @@ header {
     }
 
     .circle-icon {
-        width: 100px;
-        height: 100px;
+        width: 250px;
+        height: 250px;
+        transform: translate(-35px, -35px);
     }
 
     .h-logo {
@@ -317,13 +324,11 @@ header {
 }
 
 .highlight {
-    background: var(--gold-gradient);
+    background: linear-gradient(90deg, #bc881b, #fdeb95, #cea137, #fded98, #b78113);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     font-weight: 700;
-    background-size: 200% auto;
-    animation: shimmer 3s linear infinite;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -337,18 +342,19 @@ header {
 
 .register-btn {
     background: var(--gold-gradient);
-    color: var(--text-color);
+    color: #002706;
     border: none;
     padding: 16px 32px;
     border-radius: 50px;
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 700;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 12px;
     transition: all 0.3s ease;
     font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
 }
 
 .register-btn:hover {
@@ -384,37 +390,62 @@ header {
 }
 
 .stats {
-    margin-top: 120px; /* Increased top margin */
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 40px;
-    border-radius: 20px;
-    z-index: 1;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 80px; /* Increased bottom margin */
+    align-items: center;
+    gap: 60px;
+    padding: 60px;
+    margin-top: 40px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    z-index: 1;
     animation: fadeInUp 1s ease-out 0.2s;
     animation-fill-mode: backwards;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.stats:hover {
+    transform: translateY(-10px);
 }
 
 .stat-item {
     text-align: center;
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .stat-item h2 {
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
     font-size: 2.5rem;
-    margin: 0;
     font-weight: 700;
     white-space: nowrap;
-    background-size: 200% auto;
-    animation: shimmer 3s linear infinite;
     font-family: 'Montserrat', sans-serif;
+    color: #FFD700;
+}
+
+.stat-item1000 {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-item1000 h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+    color: #002706;
+    background-color: #FFD700;
+    border-radius: 1rem;
+    padding: 0.5rem 2rem;
+    display: inline-block;
 }
 
 .stat-item p {
@@ -446,47 +477,6 @@ header {
     .triangle-decoration {
         width: 96%; /* Increased from 80% to 96% (20% larger) */
         min-width: 300px; /* Increased from 250px to 300px (20% larger) */
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .stat-item h2 {
-        font-size: 2.4rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .stats {
-        flex-direction: column;
-        gap: 30px;
-        padding: 30px;
-    }
-
-    .stat-item h2 {
-        font-size: 2rem;
-    }
-
-    .image-content {
-        margin-top: 0;
-        margin-bottom: -300px;
-        width: 100%;
-        height: 600px;
-    }
-    
-    .stats {
-        margin-top: 80px;
-        padding: 30px;
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .hero-button {
-        margin-bottom: 80px; /* Adjusted for mobile */
-    }
-    
-    .stats {
-        margin-top: 40px; /* Adjusted for mobile */
     }
 }
 
@@ -537,112 +527,135 @@ header {
 .card h3 {
     font-size: 1.2rem;
     margin-bottom: 15px;
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
     font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
 }
 
 /* New Skills Grid Styles */
 .skills-section {
-    padding: 40px 20px;
-    background: #000;
+    padding: 60px 0;
+    position: relative;
+    text-align: center;
+}
+
+.skills-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto 40px;
+    background: linear-gradient(90deg, #bc881b, #fdeb95, #cea137, #fded98, #b78113);
+    color: #002706;
+    padding: 10px 30px;
+    border-radius: 15px;
+    display: inline-block;
 }
 
 .skills-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.skills-title {
-    text-align: center;
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 2px 15px rgba(255, 215, 0, 0.2);
+    padding: 0 20px;
 }
 
 .skill-item {
     position: relative;
-    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-    border-radius: 20px;
-    padding: 30px;
-    min-height: 300px;
+    padding: 40px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 215, 0, 0.1);
-}
-
-.skill-number {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: 1rem;
-    color: #FFD700;
-    font-weight: bold;
-    opacity: 0.8;
-}
-
-.skill-icon {
-    width: 250px;
-    height: 250px;
-    object-fit: contain;
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    align-items: flex-start;
+    gap: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
     transition: transform 0.3s ease;
 }
 
-.skill-item:hover .skill-icon {
-    transform: scale(1.05);
+.skill-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin: 0;
+    max-width: 60%;
+    z-index: 1;
 }
 
-.skill-name {
-    font-size: 1.6rem;
-    color: #FFD700;
-    margin-top: 45px;
-    margin-bottom: 15px;
-    max-width: 45%;
-    line-height: 1.3;
+.skill-icon {
+    width: 320px;  /* Decreased from 400px to 320px (20% smaller) */
+    height: 320px;  /* Decreased from 400px to 320px (20% smaller) */
+    object-fit: contain;
+    position: absolute;
+    right: 20px;  /* Changed from -10px to 20px to move the image more to the left */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: 0.9;
 }
 
 .course-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     padding: 12px 25px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    background: #FFD700;
     color: #000;
-    background: linear-gradient(145deg, #FFD700, #FFC000);
-    border-radius: 25px;
     text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
     transition: all 0.3s ease;
-    margin-top: auto;
-    align-self: flex-start;
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+    z-index: 1;
 }
 
 .course-btn:hover {
+    background: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
-    background: linear-gradient(145deg, #FFC000, #FFD700);
+}
+
+@media (max-width: 768px) {
+    .skill-item {
+        padding: 30px;
+    }
+    
+    .skill-name {
+        font-size: 1.6rem;
+        max-width: 70%;
+    }
+    
+    .skill-icon {
+        width: 300px;
+        height: 300px;
+        right: -30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-item {
+        padding: 20px;
+    }
+    
+    .skill-name {
+        font-size: 1.4rem;
+        max-width: 80%;
+    }
+    
+    .skill-icon {
+        width: 200px;
+        height: 200px;
+        right: -20px;
+    }
+    
+    .course-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .skills-list {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
-        padding: 15px;
+        padding: 0 15px;
     }
 
     .skill-item {
@@ -650,15 +663,8 @@ header {
         padding: 25px;
     }
 
-    .skill-icon {
-        width: 200px;
-        height: 200px;
-        right: 15px;
-        top: 15px;
-    }
-
     .skill-name {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         max-width: 50%;
     }
 }
@@ -667,7 +673,7 @@ header {
     .skills-list {
         grid-template-columns: 1fr;
         gap: 15px;
-        padding: 10px;
+        padding: 0 10px;
     }
 
     .skill-item {
@@ -675,15 +681,8 @@ header {
         padding: 20px;
     }
 
-    .skill-icon {
-        width: 160px;
-        height: 160px;
-        right: 10px;
-        top: 10px;
-    }
-
     .skill-name {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         max-width: 55%;
     }
 }
@@ -693,15 +692,8 @@ header {
         font-size: 2.8rem;
     }
 
-    .skill-icon {
-        width: 200px;
-        height: 200px;
-        right: 15px;
-        top: 15px;
-    }
-
-    .skill-item {
-        min-height: 250px;
+    .skill-name {
+        font-size: 1.2rem;
     }
 }
 
@@ -710,15 +702,8 @@ header {
         font-size: 2.2rem;
     }
 
-    .skill-icon {
-        width: 160px;
-        height: 160px;
-        right: 10px;
-        top: 10px;
-    }
-
-    .skill-item {
-        min-height: 220px;
+    .skill-name {
+        font-size: 1.1rem;
     }
 }
 
@@ -860,11 +845,6 @@ header {
 
     .skill-item {
         padding: 15px;
-    }
-
-    .skill-icon {
-        width: 40px;
-        height: 40px;
     }
 
     .skill-name {
@@ -1213,13 +1193,6 @@ html {
         min-height: 200px;
     }
 
-    .skill-icon {
-        width: 120px;
-        height: 120px;
-        right: 15px;
-        top: 15px;
-    }
-
     .skill-name {
         font-size: 1.2rem;
         left: 15px;
@@ -1251,11 +1224,6 @@ html {
 
     .stats .stat-item h2 {
         font-size: 1rem;
-    }
-
-    .skill-icon {
-        width: 100px;
-        height: 100px;
     }
 
     .skill-name {
