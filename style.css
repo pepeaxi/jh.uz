@@ -491,7 +491,8 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 40px;  /* Added positive margin */
+    margin-top: 100px;  /* Increased margin-top from 40px to 100px */
+    padding-top: 300px;  /* Added padding-top */
     z-index: 2;
     margin-bottom: 100px; /* Add space below triangle */
 }
@@ -827,7 +828,7 @@ header {
     }
     
     .video-container iframe {
-        height: 300px;
+        height: 56.25vw;  /* maintain 16:9 aspect ratio */
     }
 }
 
@@ -1113,7 +1114,7 @@ header {
     }
     
     .video-container iframe {
-        height: 300px;
+        height: 56.25vw;  /* maintain 16:9 aspect ratio */
     }
 }
 
@@ -1322,7 +1323,7 @@ html {
     }
 
     .video-container iframe {
-        height: 300px;
+        height: 56.25vw;  /* maintain 16:9 aspect ratio */
     }
 }
 
@@ -1351,7 +1352,7 @@ html {
     }
 
     .video-container iframe {
-        height: 250px;
+        height: 56.25vw;  /* maintain 16:9 aspect ratio */
     }
 }
 
@@ -1547,13 +1548,13 @@ html {
     
     .video-container iframe {
         width: 100% !important;
-        height: 400px !important;
+        height: 56.25vw !important;  /* maintain 16:9 aspect ratio */
         object-fit: cover !important;
     }
 }
 
 @media screen and (max-width: 480px) {
     .video-container iframe {
-        height: 300px !important;
+        height: 56.25vw !important;  /* maintain 16:9 aspect ratio */
     }
 }
